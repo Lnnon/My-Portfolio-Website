@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMY PORTFOLIO WEBSITE</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/5feef8d4e1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="Images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header ">Home</a></li>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#my-skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h2>Hello There!</h2>
+                <h1>Hi, I'm <span>Lennon</span> <br>Jarabese</h1>
+                <p>UX/UI Designer</p>
+            </div>
+        </div>
+    </div>
+<!-- ---------------about------------ -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Images/user.png">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hi, I’m John Lennon Jarabese, an IT student at Dalubhasaan ng Lungsod ng Lucena with a passion for technology 
+                        and problem-solving. My primary interests lie in web development and networking topologies, where I enjoy crafting 
+                        efficient systems and solutions.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="experience">
+                        <ul>
+                            <li><span>2023 - 2024</span><br>Designing Web/App Interfaces</li>
+                            <li><span>2023</span><br>Data Encoder</li>
+                            <li><span>2022 - 2023</span><br>Admin In Quezon Capitol</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2023 - 2024 ( Currently )</span><br>2nd Year College</li>
+                            <li><span>2022 - 2023</span><br>Señior High School</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- -----------skills---------  -->
+    <div id="my-skills">
+        <div class="container">
+            <h1 class="sub-title">My Skills</h1>
+            <div class="skills-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>I specialize in creating clean, responsive, and user-friendly web designs that 
+                        blend functionality with aesthetics.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-regular fa-window-restore"></i>
+                    <h2>Web App Development</h2>
+                    <p>I develop dynamic, scalable, and efficient web applications tailored to meet user and 
+                        business needs.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-android"></i>
+                    <h2>App Design</h2>
+                    <p>I create intuitive and visually appealing app designs focused on enhancing user experience 
+                        and functionality.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- ------------------CONTACTS----------------- -->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane";"></i>johnlennonjarabese@gmail.com</p>
+                    <p><i class="fa-solid fa-phone";"></i>09913914895</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/lennon.jarabese.2024"><i class="fa-brands fa-facebook";"></i></a>
+                        <a href="https://github.com/Lnnon"><i class="fa-brands fa-github";"></i></a>
+                        <a href="https://www.instagram.com/maki.offline/profilecard/?igsh=OHFiNjRqb3J2cHNh"><i class="fa-brands fa-instagram";"></i></a>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa-brands fa-youtube";"></i></a>
+                    </div>
+                    <a href="Images/user.png" download class="btn btn2">Download CV</a>
+                </div>
+
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- --------------------Copyright------------------ -->
+    <div class="copyright">
+        <p>Copyright <i class="fa-regular fa-copyright"></i> okayiee lemon 2024. </p>
+    </div>
+
+
+
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+    </script>
+
+    <script>
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right="0"
+        }
+        function closemenu(){
+            sidemenu.style.right="-200px"
+        }
+
+
+
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx0LSecLdCCTHX4LQkSS8Yy1MKrPnTahybqFdrFVw6kcmq47Z-2KLRZAaurUd99q_LA3A/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
